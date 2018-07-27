@@ -17,12 +17,16 @@ public class createpage extends HttpServlet {
 		try
 		{
 			Class.forName("org.postgresql.Driver");
-			String jdbcUrl="jdbc:postgresql://18.222.24.54:5432/postgres?user=postgres";
-			String username="postgres";
-			String password="";
+			String jdbcUrl="jdbc:postgresql://18.222.24.54:5432/postgres";
 		
-						
-			Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+			Properties props = new Properties();
+			props.setProperty("user","postgres");
+			props.setProperty("password","");
+			props.setProperty("ssl","true");
+			Connection connection = DriverManager.getConnection(jdbcUrl, props);
+
+			String jdbcUrl = "jdbc:postgresql://18.222.24.54:5432/postgres?user=postgres&password=&ssl=true";
+			Connection connection = DriverManager.getConnection(jdbcUrl);
 			Statement statement = connection.createStatement();
 			
 			String a=req.getParameter("product");
