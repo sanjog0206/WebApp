@@ -23,9 +23,6 @@ public class viewticket extends HttpServlet {
 			props.setProperty("password","");
 			props.setProperty("ssl","true");
 			Connection connection = DriverManager.getConnection(jdbcUrl, props);
-
-			String jdbcUrl = "jdbc:postgresql://18.222.24.54:5432/postgres?user=postgres&password=&ssl=true";
-			Connection connection = DriverManager.getConnection(jdbcUrl);
 						
 			Statement statement = connection.createStatement();
 			String sql= "SELECT  * FROM avt;";
