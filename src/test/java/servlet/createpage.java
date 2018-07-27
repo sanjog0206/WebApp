@@ -22,7 +22,7 @@ public class createpage extends HttpServlet {
 			Properties props = new Properties();
 			props.setProperty("user","postgres");
 			props.setProperty("password","");
-			props.setProperty("ssl","true");
+
 			Connection connection = DriverManager.getConnection(jdbcUrl, props);
 
 			Statement statement = connection.createStatement();
